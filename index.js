@@ -4,14 +4,5 @@ const params = url.searchParams
 var redirectUrl = ""
 
 if (url.searchParams.has('link')) {
-    campaignRedirect(url)
-}
-
-function campaignRedirect(url) {
-    redirectUrl = url.searchParams.get('link');
-    url.searchParams.delete('link')
-    if (url.searchParams.toString() != "") {
-        redirectUrl += "?" + url.searchParams.toString()
-    }
-    window.location.replace(redirectUrl)
+    window.location.replace(url.searchParams.get('link'))
 }
