@@ -8,12 +8,10 @@ if (url.searchParams.has('link')) {
 }
 
 function campaignRedirect(url) {
-    if (url.searchParams.has('link')) {
-        redirectUrl = url.searchParams.get('link');
-        url.searchParams.delete('link')
-        if (url.searchParams.toString() != "") {
-            redirectUrl += "?" + url.searchParams.toString()
-        }
-        window.location.replace(redirectUrl)
+    redirectUrl = url.searchParams.get('link');
+    url.searchParams.delete('link')
+    if (url.searchParams.toString() != "") {
+        redirectUrl += "?" + url.searchParams.toString()
     }
+    window.location.replace(redirectUrl)
 }
